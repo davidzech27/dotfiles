@@ -1,0 +1,12 @@
+theme = catppuccin-mocha.conf
+
+font-size = 15
+
+macos-titlebar-style = tabs
+
+cursor-style = bar
+cursor-style-blink = false
+
+mouse-hide-while-typing = true
+
+keybind = shift+enter=text:\x1b\r

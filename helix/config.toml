@@ -1,0 +1,39 @@
+theme = "catppuccin_mocha"
+
+[editor]
+shell = ["nu", "--config", "~/Library/Application Support/nushell/config.nu", "-c"]
+idle-timeout = 5
+completion-timeout = 5
+completion-trigger-len = 0
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.auto-save]
+after-delay.enable = true
+after-delay.timeout = 5
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-levels = 1
+                          
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[keys.normal]
+X = "extend_line_above"
+A-z = ":toggle-option soft-wrap.enable"
+space.q = ":quit"
+space.i = ":pipe inline-ai %{buffer_name}"
+space.B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+
+[keys.select]
+X = "extend_line_above"
+A-z = ":toggle-option soft-wrap.enable"
+space.q = ":quit"
+space.i = ":pipe inline-ai %{buffer_name}"
+space.B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"

@@ -1,0 +1,91 @@
+[language-server.vtsls]
+command = "vtsls"
+args = [ "--stdio" ]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = [ "--stdio" ]
+
+[language-server.eslint.config]
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.emmet]
+command = "emmet-language-server"
+args = [ "--stdio" ]
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = [ "--stdio" ]
+config = { userLanguages = { rust = "html", "*.rs" = "html" }, tailwindCSS = { experimental = { classRegex = [ "class: \"(.*)\"" ] } } }
+
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
+[language-server.c]
+command = "clangd"
+args= [ "--compile-commands-dir=compile_commands_directory" ]
+
+[[language]]
+name = "typescript"
+language-servers = [ "vtsls", "eslint" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [ "vtsls", "eslint", "emmet", "tailwindcss" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ "vtsls", "eslint"]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ "vtsls", "eslint", "emmet", "tailwindcss" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = [ "--parser", "json" ] }
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "emmet", "tailwindcss" ]
+formatter = { command = 'prettier', args = [ "--parser", "html" ] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "emmet", "tailwindcss" ]
+formatter = { command = 'prettier', args = [ "--parser", "css" ] }
+auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer", "tailwindcss" ]
+formatter = { command = "bash", args = ["-c", "rustfmt | dx fmt -f -"] }
+auto-format = true
+
+[[language]]
+name = "c"
+language-servers = [ "c" ]
+

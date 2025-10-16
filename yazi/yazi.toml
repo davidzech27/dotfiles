@@ -1,0 +1,11 @@
+[opener]
+edit = [
+	{ run = 'hx "$@"', block = true },
+]
+
+[mgr]
+ratio = [2, 3, 5]
+
+[preview]
+wrap = "yes"
+
