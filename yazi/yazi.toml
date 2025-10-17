@@ -9,3 +9,12 @@ ratio = [2, 3, 5]
 [preview]
 wrap = "yes"
 
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
