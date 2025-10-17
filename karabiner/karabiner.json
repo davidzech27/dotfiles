@@ -52,47 +52,8 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Toggle kitty.app tab bar on cmd+j",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^net\\.kovidgoyal\\.kitty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [{ "shell_command": "/bin/sh /Users/David/.config/kitty/on_left_cmd_pressed.sh" }],
-                                "to_after_key_up": [{ "shell_command": "/bin/sh /Users/David/.config/kitty/on_left_cmd_released.sh" }],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
+                    }]
             },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 34304,
-                        "vendor_id": 1452
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
-                            "to": [{ "key_code": "escape" }]
-                        }
-                    ]
-                }
-            ],
             "name": "Default profile",
             "selected": true,
             "simple_modifications": [
@@ -100,8 +61,7 @@
                     "from": { "key_code": "caps_lock" },
                     "to": [{ "key_code": "escape" }]
                 }
-            ],
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+            ]
         }
     ]
 }
